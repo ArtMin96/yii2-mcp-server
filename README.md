@@ -31,44 +31,47 @@ A Model Context Protocol (MCP) server for Yii2 framework, providing database sch
 
 ## Installation
 
-1. **Install Dependencies**
+### Option 1: NPM Install (Recommended)
+
+```bash
+npm install -g yii2-mcp-server
+```
+
+Then configure Claude Code from your Yii2 project directory:
+```bash
+cd /path/to/your/yii2/project
+claude mcp add yii2 yii2-mcp-server
+```
+
+### Option 2: Manual Installation
+
+1. **Clone and Install**
    ```bash
+   git clone https://github.com/ArtMin96/yii2-mcp-server.git
    cd yii2-mcp-server
    npm install
-   ```
-
-2. **Build the Server**
-   ```bash
    npm run build
    ```
 
-3. **Configure Claude Code**
+2. **Configure Claude Code**
    
-   **Recommended Method - Using Claude CLI:**
+   **Using Claude CLI:**
    ```bash
-   claude mcp add yii2 node /var/www/billing/yii2-mcp-server/dist/index.js --cwd /var/www/billing
+   cd /path/to/your/yii2/project
+   claude mcp add yii2 node /path/to/yii2-mcp-server/dist/index.js
    ```
    
-   **Alternative - Manual JSON Configuration:**
-   
-   Add this MCP server configuration to your Claude Code settings. The server will automatically detect your Yii2 project configuration.
-
+   **Manual JSON Configuration:**
    ```json
    {
      "mcpServers": {
        "yii2": {
          "command": "node",
-         "args": ["/path/to/your/project/yii2-mcp-server/dist/index.js"],
+         "args": ["/path/to/yii2-mcp-server/dist/index.js"],
          "cwd": "/path/to/your/yii2/project"
        }
      }
    }
-   ```
-
-   **Using NPM Global Install:**
-   ```bash
-   npm install -g ./yii2-mcp-server
-   claude mcp add yii2 yii2-mcp-server --cwd /path/to/your/yii2/project
    ```
 
 ## Configuration
