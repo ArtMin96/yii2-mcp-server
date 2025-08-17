@@ -10,6 +10,12 @@ A Model Context Protocol (MCP) server for Yii2 framework, providing database sch
 - **db_table_relationships**: Analyze foreign key relationships 
 - **db_execute_query**: Execute SELECT queries safely with results
 
+### Database Optimization & Analysis (NEW)
+- **db_analyze_table**: Comprehensive table analysis including fragmentation, index efficiency, and storage engine recommendations
+- **db_get_index_suggestions**: Smart index recommendations based on table structure and query patterns
+- **db_profile_query**: Query performance profiling with execution plans and optimization suggestions
+- **db_monitor_connections**: Real-time database connection monitoring with alerting
+
 ### Yii2 Console Tools
 - **yii_list_commands**: List all available Yii console commands with descriptions
 - **yii_command_help**: Get detailed help for specific commands
@@ -28,6 +34,56 @@ A Model Context Protocol (MCP) server for Yii2 framework, providing database sch
 - **asset_list_bundles**: List all asset bundles with CSS/JS files and dependencies
 - **asset_analyze_dependencies**: Analyze asset dependency chains and registration order
 - **widget_list**: Discover widgets and their associated asset bundles
+
+### Migration Management
+- **migration_create**: Create new database migrations
+- **migration_diff**: Generate migrations from model/database differences
+- **migration_rollback**: Rollback migrations safely
+- **migration_generate_from_model**: Generate migrations from ActiveRecord models
+
+### Code Generation Tools
+- **generate_crud**: Generate CRUD controllers and views
+- **generate_model**: Generate ActiveRecord models from database tables
+- **generate_api**: Generate REST API controllers
+- **generate_form**: Generate form classes
+
+### Cache Management
+- **cache_clear**: Clear application cache with options
+- **cache_inspect**: Inspect cache configuration and status
+- **cache_performance**: Analyze cache performance and hit rates
+
+### RBAC (Role-Based Access Control)
+- **rbac_permission_tree**: Visualize permission hierarchy
+- **rbac_user_access**: Check user permissions and access levels
+- **rbac_role_analysis**: Analyze role assignments and permissions
+- **rbac_access_debug**: Debug access control issues
+
+### Queue System Management
+- **queue_job_status**: Monitor queue job status and progress
+- **queue_retry_failed**: Retry failed queue jobs
+- **queue_worker_status**: Check queue worker status
+- **queue_clear_failed**: Clear failed jobs from queue
+
+### Logging & Debugging
+- **log_error_analysis**: Analyze error logs and patterns
+- **log_performance_issues**: Identify performance bottlenecks in logs
+- **log_search**: Search through application logs
+- **log_tail**: Real-time log monitoring
+
+### Advanced Database Analysis
+- **db_index_suggestions**: Advanced index optimization recommendations
+- **db_query_profiler**: Detailed query performance profiling
+- **db_table_analysis**: In-depth table structure analysis
+- **db_connection_monitor**: Real-time database connection monitoring
+
+### Testing & Quality Assurance
+- **test_run**: Execute test suites
+- **test_generate**: Generate test cases
+- **test_coverage_report**: Generate code coverage reports
+
+### Performance Analysis
+- **performance_profile**: Application performance profiling
+- **asset_performance_analysis**: Frontend asset performance analysis
 
 ## Installation
 
@@ -96,6 +152,13 @@ Once configured, you can use these tools through Claude Code:
 # Database Analysis
 Use db_list_tables tool
 Use db_describe_table with table_name: "user"
+Use db_table_relationships with table_name: "user"
+
+# Database Optimization (NEW)
+Use db_analyze_table with table_name: "user"
+Use db_get_index_suggestions with table_name: "user"
+Use db_profile_query with query: "SELECT * FROM user WHERE status = 'active'"
+Use db_monitor_connections with alert_threshold: 50
 
 # Yii2 Console Commands
 Use yii_list_commands
@@ -118,6 +181,44 @@ Use asset_analyze_dependencies with asset_name: "AppAsset"
 # Widget Discovery
 Use widget_list
 Use widget_list with module_filter: "fastnet"
+
+# Migration Management
+Use migration_create with table_name: "user_profiles"
+Use migration_diff to generate from model changes
+Use migration_rollback with steps: 1
+
+# Code Generation
+Use generate_crud with table_name: "posts"
+Use generate_model with table_name: "categories" 
+Use generate_api with model_class: "User"
+
+# Cache Operations
+Use cache_clear with component: "db"
+Use cache_inspect
+Use cache_performance
+
+# RBAC Analysis
+Use rbac_permission_tree
+Use rbac_user_access with user_id: 1
+Use rbac_role_analysis with role: "admin"
+
+# Queue Management
+Use queue_job_status
+Use queue_retry_failed with job_id: 123
+Use queue_worker_status
+
+# Logging & Debugging
+Use log_error_analysis with hours: 24
+Use log_search with pattern: "database error"
+Use log_tail with lines: 50
+
+# Testing
+Use test_run with suite: "unit"
+Use test_coverage_report
+
+# Performance Analysis
+Use performance_profile with duration: "5m"
+Use asset_performance_analysis
 ```
 
 ### Module Analysis Features

@@ -1,6 +1,6 @@
 {
   "name": "yii2-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "MCP Server for Yii2 Framework - Database schema inspection, command execution, and project management",
   "main": "dist/index.js",
   "bin": {
