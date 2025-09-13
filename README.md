@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/artmin96-yii2-mcp-server-badge.png)](https://mseep.ai/app/artmin96-yii2-mcp-server)
+
 # Yii2 MCP Server
 
 A Model Context Protocol (MCP) server for Yii2 framework, providing database schema inspection, console command execution, and project management tools for Claude Code.
