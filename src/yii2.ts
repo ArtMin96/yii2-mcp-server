@@ -92,13 +92,14 @@ export class Yii2Manager {
 
       for (const line of lines) {
         const trimmed = line.trim();
-        
-        if (trimmed.startsWith('- ') && !trimmed.includes('    ')) {
+
+        // Command line starts with "- " (e.g., "- cache")
+        if (trimmed.startsWith('- ')) {
           // New command
           if (currentCommand) {
             commands.push(currentCommand);
           }
-          
+
           const parts = trimmed.substring(2).split(/\s{2,}/);
           currentCommand = {
             name: parts[0],
@@ -106,11 +107,10 @@ export class Yii2Manager {
             actions: []
           };
           inCommandSection = true;
-        } else if (inCommandSection && trimmed.startsWith('    ') && !trimmed.startsWith('        ')) {
-          // Command action
+        } else if (inCommandSection && line.startsWith('    ') && !line.startsWith('        ')) {
+          // Command action (4 spaces indent, not 8) - check original line for indentation
           if (currentCommand) {
-            const actionLine = trimmed.substring(4);
-            const actionParts = actionLine.split(/\s{2,}/);
+            const actionParts = trimmed.split(/\s{2,}/);
             currentCommand.actions.push(actionParts[0]);
           }
         } else if (trimmed === '' && currentCommand) {
