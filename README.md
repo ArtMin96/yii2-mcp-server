@@ -1,3 +1,5 @@
+
+
 # Yii2 MCP Server
 
 A Model Context Protocol (MCP) server for Yii2 framework, providing database schema inspection, console command execution, and project management tools for Claude Code.
@@ -103,6 +105,8 @@ claude mcp add yii2 yii2-mcp-server
 
 1. **Clone and Install**
    ```bash
+   # Clone as a sibling directory to your Yii2 project
+   cd /path/to/parent/directory
    git clone https://github.com/ArtMin96/yii2-mcp-server.git
    cd yii2-mcp-server
    npm install
